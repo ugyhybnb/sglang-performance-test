@@ -35,8 +35,10 @@
 ## 仓库内容
 
 - [复现说明](项目A-复现说明.md)
+- [Quickstart](QUICKSTART.md)
 - [最终结果文档](项目A-v2-最终结果文档.md)
 - [可视化说明](项目A-v2-可视化说明.md)
+- [License](LICENSE)
 - [GitHub Pages 页面](docs/index.md)
 
 ## 结构
@@ -44,6 +46,8 @@
 ```text
 .
 ├─ README.md
+├─ LICENSE
+├─ QUICKSTART.md
 ├─ docs/                  # GitHub Pages 展示页
 ├─ figures/final/         # 最终图表
 ├─ scripts/               # benchmark 与绘图脚本
