@@ -2,7 +2,21 @@
 
 ## 基于 SGLang 的 4 卡 Qwen3-14B 生产级推理服务压测
 
-这个项目在 `4 x RTX 4090 24GB` 上使用 SGLang 单实例 `tp=4` 部署 `Qwen3-14B`，围绕 `/v1/chat/completions` 完成容量、长尾时延、prefix cache、混合流量和长时稳定性分析。
+这是一个面向推理 infra 岗位的作品集项目。
+
+我在 `4 x RTX 4090 24GB` 上使用 SGLang 单实例 `tp=4` 部署 `Qwen3-14B`，围绕 `/v1/chat/completions` 做了容量边界、长尾时延、prefix cache、混合流量和长时稳定性分析，并将 benchmark、metrics、GPU 采样、图表和结论整理成一个公开可浏览的项目页。
+
+## 我想解决什么问题
+
+很多“大模型压测项目”只有几条 benchmark 输出，缺少服务化视角。
+
+这个项目重点回答的是：
+
+- 4 卡 14B 服务能否稳定运行
+- 容量边界和退化边界在哪里
+- 长 prompt、长输出和混合流量分别伤到哪些指标
+- prefix cache 的收益能不能被真实数据证明
+- 中压稳定区和高压退化区如何区分
 
 ## 一眼看结论
 
@@ -50,6 +64,21 @@
 
 ![Queue Running Stability](assets/queue_running_stability.png)
 
+## 为什么这些结果可信
+
+这个项目不是只放结论图。
+
+背后保留了完整证据链：
+
+- 服务基线文档
+- benchmark JSONL
+- Prometheus metrics 采样
+- GPU CSV 采样
+- 绘图脚本
+- 各专项技术报告
+
+也就是说，这个页面是结果入口，不是唯一材料。
+
 ## 项目结构
 
 - 仓库首页：查看仓库根目录 `README.md`
@@ -57,6 +86,7 @@
 - 公开摘要：查看仓库根目录 `项目A-公开摘要.md`
 - 复现说明：查看仓库根目录 `项目A-复现说明.md`
 - 简历描述：查看仓库根目录 `项目A-v2-简历描述.md`
+- 产物清单：查看仓库根目录 `ARTIFACTS.md`
 
 ## 发布建议
 
