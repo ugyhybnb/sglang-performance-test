@@ -66,6 +66,6 @@ curl -sS http://127.0.0.1:30000/metrics
 
 ## 6. Read the results
 
-- Final report: `项目A-v2-最终结果文档.md`
-- Reproduction notes: `项目A-复现说明.md`
-- Visualization notes: `项目A-v2-可视化说明.md`
+- Final report: `sglang-performance-test-final-report.md`
+- Reproduction notes: `sglang-performance-test-reproduction.md`
+- Visualization notes: `sglang-performance-test-visualization.md`

@@ -1,4 +1,4 @@
-# 项目A-v2-可视化说明
+# sglang-performance-test visualization notes
 
 更新日期：2026-06-14
 

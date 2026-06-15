@@ -1,10 +1,10 @@
-# 项目A-v2最终结果文档
+# sglang-performance-test final report
 
 完成日期：2026-06-14
 
 ## 1. 项目目标
 
-项目A v2 定位为：
+sglang-performance-test 定位为：
 
 **基于 SGLang 的 4 卡 Qwen3-14B 生产级推理服务压测项目**
 
@@ -42,7 +42,7 @@
 
 启动命令见：
 
-`项目A-v2-服务基线.md`
+`sglang-performance-test-reproduction.md`
 
 核心参数：
 
@@ -68,15 +68,15 @@
 
 ## 4. 正式压测矩阵
 
-| 阶段 | 文档 |
+| 阶段 | 说明 |
 |---|---|
-| request-rate + stream/non-stream | `项目A-v2-request-rate压测.md` |
-| max-concurrency | `项目A-v2-max-concurrency压测.md` |
-| 长 prompt | `项目A-v2-长prompt专项.md` |
-| 长输出 | `项目A-v2-长输出专项.md` |
-| shared-prefix | `项目A-v2-shared-prefix专项.md` |
-| 混合流量 | `项目A-v2-混合流量专项.md` |
-| 长时稳定性 | `项目A-v2-长时稳定性专项.md` |
+| request-rate + stream/non-stream | 基线容量与长尾时延 |
+| max-concurrency | 并发限制与吞吐变化 |
+| 长 prompt | prefill 主导场景 |
+| 长输出 | decode 主导场景 |
+| shared-prefix | prefix cache 收益 |
+| 混合流量 | 多类请求互相影响 |
+| 长时稳定性 | 中压与高压持续运行表现 |
 
 每个实验均记录：
 
@@ -180,9 +180,7 @@ non-stream cache 证据：
 | F-003 | 服务基线 | 后台 `nohup` 启动日志为空，无法诊断 | 改为前台会话并 `tee` 写服务日志 |
 | F-004 | 可视化 | CSV 行字段不一致导致绘图失败 | 修正 `plot_projectA_v2.py` 的 CSV 字段合并逻辑 |
 
-完整失败记录见：
-
-`项目A-v2-实验台账.md`
+公开版仅保留与最终结论直接相关的失败条目；内部工作台账未纳入公开仓库。
 
 ## 12. 最终结论
 
@@ -204,7 +202,7 @@ workload 判断：
 
 图表说明见：
 
-`项目A-v2-可视化说明.md`
+`sglang-performance-test-visualization.md`
 
 核心图：
 

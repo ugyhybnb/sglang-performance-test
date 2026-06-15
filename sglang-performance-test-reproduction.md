@@ -1,4 +1,4 @@
-# 项目A-v2复现说明
+# sglang-performance-test reproduction
 
 ## 1. 目录
 
@@ -118,16 +118,11 @@ wrapper 会自动生成：
 - `figures/raw/*.png`
 - `figures/final/*.png`
 
-## 6. 文档对应关系
+## 6. 公开文档对应关系
 
 | 文档 | 内容 |
 |---|---|
-| `项目A-v2-服务基线.md` | 服务启动、健康检查、GPU 基线 |
-| `项目A-v2-request-rate压测.md` | request-rate 与 stream/non-stream 对照 |
-| `项目A-v2-max-concurrency压测.md` | max-concurrency 阶梯 |
-| `项目A-v2-长prompt专项.md` | prefill 主导实验 |
-| `项目A-v2-长输出专项.md` | decode 主导实验 |
-| `项目A-v2-shared-prefix专项.md` | prefix cache 收益 |
-| `项目A-v2-混合流量专项.md` | 混合 workload |
-| `项目A-v2-长时稳定性专项.md` | 30 分钟和 15 分钟稳定性 |
-| `项目A-v2-可视化说明.md` | 图表和数据来源 |
+| `README.md` | 项目概览 |
+| `sglang-performance-test-final-report.md` | 最终实验结果与结论 |
+| `sglang-performance-test-visualization.md` | 图表与数据来源 |
+| `docs/index.md` | GitHub Pages 展示页 |

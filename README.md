@@ -1,4 +1,4 @@
-# 项目A-v2：SGLang 4 卡 Qwen3-14B 推理服务压测
+# sglang-performance-test
 
 在 `4 x RTX 4090 24GB` 上使用 SGLang 单实例 `tp=4` 部署 `Qwen3-14B`，围绕 `/v1/chat/completions` 完成 request-rate、max-concurrency、长 prompt、长输出、shared-prefix、混合流量和长时稳定性压测。
 
@@ -34,10 +34,10 @@
 
 ## 仓库内容
 
-- [复现说明](项目A-复现说明.md)
+- [复现说明](sglang-performance-test-reproduction.md)
 - [Quickstart](QUICKSTART.md)
-- [最终结果文档](项目A-v2-最终结果文档.md)
-- [可视化说明](项目A-v2-可视化说明.md)
+- [最终结果文档](sglang-performance-test-final-report.md)
+- [可视化说明](sglang-performance-test-visualization.md)
 - [License](LICENSE)
 - [GitHub Pages 页面](docs/index.md)
 
@@ -51,7 +51,7 @@
 ├─ docs/                  # GitHub Pages 展示页
 ├─ figures/final/         # 最终图表
 ├─ scripts/               # benchmark 与绘图脚本
-├─ 项目A-复现说明.md
-├─ 项目A-v2-最终结果文档.md
-└─ 项目A-v2-可视化说明.md
+├─ sglang-performance-test-reproduction.md
+├─ sglang-performance-test-final-report.md
+└─ sglang-performance-test-visualization.md
 ```

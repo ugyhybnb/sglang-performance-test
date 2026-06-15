@@ -1,4 +1,4 @@
-# 项目A-v2
+# sglang-performance-test
 
 ## SGLang 4 卡 Qwen3-14B 推理服务压测
 
@@ -53,6 +53,6 @@
 
 ## 说明
 
-- 复现方式见仓库根目录 `项目A-复现说明.md`
-- 最终结论见仓库根目录 `项目A-v2-最终结果文档.md`
-- 图表来源说明见仓库根目录 `项目A-v2-可视化说明.md`
+- 复现方式见仓库根目录 `sglang-performance-test-reproduction.md`
+- 最终结论见仓库根目录 `sglang-performance-test-final-report.md`
+- 图表来源说明见仓库根目录 `sglang-performance-test-visualization.md`
