@@ -1,28 +1,16 @@
-# sglang-performance-test-v2
+# 项目A-v2
 
-## 基于 SGLang 的 4 卡 Qwen3-14B 推理服务压测
+## SGLang 4 卡 Qwen3-14B 推理服务压测
 
+在 `4 x RTX 4090 24GB` 上使用 SGLang 单实例 `tp=4` 部署 `Qwen3-14B`，围绕 `/v1/chat/completions` 完成 request-rate、max-concurrency、长 prompt、长输出、shared-prefix、混合流量和长时稳定性分析。
 
-我在 `4 x RTX 4090 24GB` 上使用 SGLang 单实例 `tp=4` 部署 `Qwen3-14B`，围绕 `/v1/chat/completions` 做了容量边界、长尾时延、prefix cache、混合流量和长时稳定性分析，并将 benchmark、metrics、GPU 采样、图表和结论整理成一个公开可浏览的项目页。
+## 核心结论
 
-## 我想解决什么问题
-
-从服务化视角对大模型压测
-
-这个项目重点回答的是：
-
-- 4 卡 14B 服务能否稳定运行
-- 容量边界和退化边界在哪里
-- 长 prompt、长输出和混合流量分别伤到哪些指标
-- prefix cache 的收益体现
-- 中压稳定区和高压退化区如何区分
-
-## 一眼看结论
-
-- `rr4` 是更适合做稳定区分析的中压点
-- `rr8` 虽然吞吐更高，但已经进入长尾和显存风险明显抬升的退化区
-- shared-prefix 效果由 `cached_tokens` 和 `cache_hit_token_ratio` 支撑
-- 长 prompt 主要伤 `TTFT`，长输出主要伤 `E2E latency`
+- `rr4` 可作为中压稳定区分析
+- `rr8` 进入高压退化区
+- 长 prompt 主要拉高 `TTFT`
+- 长输出主要拉高 `E2E latency`
+- shared-prefix 收益可由 `cached_tokens` 与 `cache_hit_token_ratio` 解释
 
 ## 核心数字
 
@@ -63,6 +51,8 @@
 
 ![Queue Running Stability](assets/queue_running_stability.png)
 
+## 说明
 
-
-
+- 复现方式见仓库根目录 `项目A-复现说明.md`
+- 最终结论见仓库根目录 `项目A-v2-最终结果文档.md`
+- 图表来源说明见仓库根目录 `项目A-v2-可视化说明.md`
